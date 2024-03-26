@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358D0152BB1A3AD00821E5D /* MainWindowController.swift */; };
 		A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3B42BB07837003C09AF /* AppDelegate.swift */; };
 		A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3B62BB07837003C09AF /* GameScene.sks */; };
 		A3C5D3B92BB07837003C09AF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3B82BB07837003C09AF /* Actions.sks */; };
@@ -17,6 +18,11 @@
 		A3C5D3CD2BB07838003C09AF /* DaBallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3CC2BB07838003C09AF /* DaBallsTests.swift */; };
 		A3C5D3D72BB07838003C09AF /* DaBallsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3D62BB07838003C09AF /* DaBallsUITests.swift */; };
 		A3C5D3D92BB07838003C09AF /* DaBallsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3D82BB07838003C09AF /* DaBallsUITestsLaunchTests.swift */; };
+		A3C5D3E82BB07870003C09AF /* Tonic in Frameworks */ = {isa = PBXBuildFile; productRef = A3C5D3E72BB07870003C09AF /* Tonic */; };
+		A3C5D3EA2BB07891003C09AF /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3E92BB07891003C09AF /* AudioController.swift */; };
+		A3C5D3ED2BB078BF003C09AF /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3C5D3EC2BB078BF003C09AF /* AudioKit */; };
+		A3C5D3F12BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */; };
+		A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A358D0152BB1A3AD00821E5D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		A3C5D3B12BB07837003C09AF /* DaBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5D3B42BB07837003C09AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C5D3B62BB07837003C09AF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -51,6 +58,9 @@
 		A3C5D3D22BB07838003C09AF /* DaBallsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaBallsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5D3D62BB07838003C09AF /* DaBallsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaBallsUITests.swift; sourceTree = "<group>"; };
 		A3C5D3D82BB07838003C09AF /* DaBallsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaBallsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A3C5D3E92BB07891003C09AF /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Motostoke and Glockenspiel Carillons-v3.sf2"; sourceTree = "<group>"; };
+		A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rhodes EPs Plus-v2.4.sf2"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C5D3ED2BB078BF003C09AF /* AudioKit in Frameworks */,
+				A3C5D3E82BB07870003C09AF /* Tonic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +97,7 @@
 				A3C5D3CB2BB07838003C09AF /* DaBallsTests */,
 				A3C5D3D52BB07838003C09AF /* DaBallsUITests */,
 				A3C5D3B22BB07837003C09AF /* Products */,
+				A3C5D3EB2BB078BF003C09AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				A3C5D3B42BB07837003C09AF /* AppDelegate.swift */,
+				A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */,
+				A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */,
 				A3C5D3B62BB07837003C09AF /* GameScene.sks */,
 				A3C5D3B82BB07837003C09AF /* Actions.sks */,
 				A3C5D3BA2BB07837003C09AF /* GameScene.swift */,
 				A3C5D3BC2BB07837003C09AF /* ViewController.swift */,
+				A3C5D3E92BB07891003C09AF /* AudioController.swift */,
+				A358D0152BB1A3AD00821E5D /* MainWindowController.swift */,
 				A3C5D3BE2BB07838003C09AF /* Assets.xcassets */,
 				A3C5D3C02BB07838003C09AF /* Main.storyboard */,
 				A3C5D3C32BB07838003C09AF /* DaBalls.entitlements */,
@@ -130,6 +147,13 @@
 			path = DaBallsUITests;
 			sourceTree = "<group>";
 		};
+		A3C5D3EB2BB078BF003C09AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +170,10 @@
 			dependencies = (
 			);
 			name = DaBalls;
+			packageProductDependencies = (
+				A3C5D3E72BB07870003C09AF /* Tonic */,
+				A3C5D3EC2BB078BF003C09AF /* AudioKit */,
+			);
 			productName = DaBalls;
 			productReference = A3C5D3B12BB07837003C09AF /* DaBalls.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +246,10 @@
 				Base,
 			);
 			mainGroup = A3C5D3A82BB07836003C09AF;
+			packageReferences = (
+				A3C5D3E52BB07861003C09AF /* XCRemoteSwiftPackageReference "AudioKit" */,
+				A3C5D3E62BB07870003C09AF /* XCRemoteSwiftPackageReference "Tonic" */,
+			);
 			productRefGroup = A3C5D3B22BB07837003C09AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */,
+				A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */,
 				A3C5D3BF2BB07838003C09AF /* Assets.xcassets in Resources */,
+				A3C5D3F12BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 in Resources */,
 				A3C5D3B92BB07837003C09AF /* Actions.sks in Resources */,
 				A3C5D3C22BB07838003C09AF /* Main.storyboard in Resources */,
 			);
@@ -264,7 +298,9 @@
 			files = (
 				A3C5D3BD2BB07837003C09AF /* ViewController.swift in Sources */,
 				A3C5D3BB2BB07837003C09AF /* GameScene.swift in Sources */,
+				A3C5D3EA2BB07891003C09AF /* AudioController.swift in Sources */,
 				A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */,
+				A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +632,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3C5D3E52BB07861003C09AF /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.3;
+			};
+		};
+		A3C5D3E62BB07870003C09AF /* XCRemoteSwiftPackageReference "Tonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/Tonic.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3C5D3E72BB07870003C09AF /* Tonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C5D3E62BB07870003C09AF /* XCRemoteSwiftPackageReference "Tonic" */;
+			productName = Tonic;
+		};
+		A3C5D3EC2BB078BF003C09AF /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C5D3E52BB07861003C09AF /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3C5D3A92BB07836003C09AF /* Project object */;
 }
