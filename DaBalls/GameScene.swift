@@ -113,8 +113,8 @@ class GameScene: SKScene {
     }
 
     func start() {
-        physicsWorld.gravity = CGVectorMake(0, -1.4)
-        kickBalls()
+        physicsWorld.gravity = CGVectorMake(0, -0.4)
+        //kickBalls()
     }
 
     func touchDown(atPoint pos : CGPoint) {
@@ -154,7 +154,7 @@ extension GameScene {
         shape.physicsBody = SKPhysicsBody(edgeLoopFrom: borderFrame)
         shape.physicsBody?.friction = 0
         shape.physicsBody?.isDynamic = true
-        shape.physicsBody?.restitution = 0.99
+        shape.physicsBody?.restitution = 1
         shape.physicsBody?.categoryBitMask = PhysicsCategory.wall
         shape.physicsBody?.contactTestBitMask = PhysicsCategory.ball
         shape.physicsBody?.collisionBitMask = PhysicsCategory.ball
@@ -186,7 +186,7 @@ extension GameScene {
             ball.physicsBody?.contactTestBitMask = PhysicsCategory.wall
             ball.physicsBody?.collisionBitMask = PhysicsCategory.wall
             ball.physicsBody?.usesPreciseCollisionDetection = true
-            ball.physicsBody?.restitution = 0.99
+            ball.physicsBody?.restitution = 1
             ball.physicsBody?.linearDamping = 0
             ball.physicsBody?.angularDamping = 0
             ball.noteNumber = i

@@ -698,11 +698,27 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="iYm-hh-i95"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Dze-Py-Hcs"/>
+                                <toolbarItem implicitItemIdentifier="75C1B1F2-8721-4522-B377-C4E34AA599DD" label="Record" paletteLabel="Record" tag="-1" image="record.circle" catalog="system" bordered="YES" id="jxw-td-uh7">
+                                    <size key="minSize" width="27" height="25"/>
+                                    <size key="maxSize" width="27" height="25"/>
+                                    <connections>
+                                        <action selector="startScreenRecording:" target="B8D-0N-5wS" id="46J-8R-Efk"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="AD4190D5-EF2F-4BE9-92C6-E3340FF84176" label="Stop" paletteLabel="Stop" tag="-1" image="stop" catalog="system" bordered="YES" id="tXA-nU-zWk">
+                                    <size key="minSize" width="26" height="25"/>
+                                    <size key="maxSize" width="26" height="25"/>
+                                    <connections>
+                                        <action selector="stopScreenRecording:" target="B8D-0N-5wS" id="ZCZ-7g-wXl"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Dze-Py-Hcs"/>
                                 <toolbarItem reference="NOS-m1-Qev"/>
                                 <toolbarItem reference="Dze-Py-Hcs"/>
+                                <toolbarItem reference="jxw-td-uh7"/>
+                                <toolbarItem reference="tXA-nU-zWk"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -736,5 +752,7 @@
     </scenes>
     <resources>
         <image name="NSSlideshowTemplate" width="24" height="18"/>
+        <image name="record.circle" catalog="system" width="15" height="15"/>
+        <image name="stop" catalog="system" width="14" height="13"/>
     </resources>
 </document>
