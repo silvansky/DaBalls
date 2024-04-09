@@ -703,15 +703,21 @@
                                         <action selector="startScreenRecording:" target="B8D-0N-5wS" id="46J-8R-Efk"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="AD4190D5-EF2F-4BE9-92C6-E3340FF84176" label="Stop" paletteLabel="Stop" tag="-1" image="stop" catalog="system" bordered="YES" sizingBehavior="auto" id="tXA-nU-zWk">
+                                <toolbarItem implicitItemIdentifier="AD4190D5-EF2F-4BE9-92C6-E3340FF84176" label="Stop recording" paletteLabel="Stop recording" tag="-1" image="stop" catalog="system" bordered="YES" sizingBehavior="auto" id="tXA-nU-zWk">
                                     <connections>
                                         <action selector="stopScreenRecording:" target="B8D-0N-5wS" id="ZCZ-7g-wXl"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F2ABD69F-CC63-46F3-ADBE-877FC588F246" label="Reset" paletteLabel="Reset" tag="-1" image="NSTouchBarRefreshTemplate" bordered="YES" sizingBehavior="auto" id="hR5-OE-H3R">
+                                    <connections>
+                                        <action selector="reset:" target="B8D-0N-5wS" id="3mD-q3-k1X"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Dze-Py-Hcs"/>
                                 <toolbarItem reference="NOS-m1-Qev"/>
+                                <toolbarItem reference="hR5-OE-H3R"/>
                                 <toolbarItem reference="Dze-Py-Hcs"/>
                                 <toolbarItem reference="jxw-td-uh7"/>
                                 <toolbarItem reference="tXA-nU-zWk"/>
@@ -748,6 +754,7 @@
     </scenes>
     <resources>
         <image name="NSSlideshowTemplate" width="24" height="18"/>
+        <image name="NSTouchBarRefreshTemplate" width="18" height="21"/>
         <image name="record.circle" catalog="system" width="15" height="15"/>
         <image name="stop" catalog="system" width="14" height="13"/>
     </resources>

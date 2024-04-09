@@ -15,6 +15,10 @@ class MainWindowController: NSWindowController {
         vc.start()
     }
 
+    @IBAction func reset(_ sender: Any) {
+        vc.reset()
+    }
+
     @IBAction func startScreenRecording(_ sender: Any) {
         vc.startScreenRecording()
     }

@@ -39,6 +39,10 @@ class ViewController: NSViewController {
         gameScene?.start()
     }
 
+    func reset() {
+        gameScene?.reset()
+    }
+
     func startScreenRecording() {
         guard !recorder.isRecording else { return }
         recorder.startRecording { error in

@@ -20,7 +20,7 @@ class GameScene: SKScene {
     private var audio: AudioController { AudioController.shared }
 
     private let arranger: BallArranger = CircularArranger()
-    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(50, 10))
+    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(50, 50))
     private let coloring: BallColoring = GradientBallColoring(gradient: .rainbow)
 
     override func sceneDidLoad() {
@@ -43,8 +43,16 @@ class GameScene: SKScene {
     }
 
     func start() {
-        physicsWorld.gravity = CGVectorMake(0, -0.4)
+        //physicsWorld.gravity = CGVectorMake(0, -0.4)
         kickBalls()
+    }
+
+    func reset() {
+        physicsWorld.gravity = CGVectorMake(0, 0)
+        for ball in balls {
+            ball.physicsBody?.velocity = CGVectorMake(0, 0)
+        }
+        arrangeBalls()
     }
 
     func touchDown(atPoint pos : CGPoint) {
