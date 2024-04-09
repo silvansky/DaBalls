@@ -20,7 +20,7 @@ class GameScene: SKScene {
     private var audio: AudioController { AudioController.shared }
 
     private let arranger: BallArranger = CircularArranger()
-    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(50, 50))
+    private let kicker: BallKicker = RadialBallKicker()//LinearBallKicker(vector: CGVectorMake(50, 50))
     private let coloring: BallColoring = GradientBallColoring(gradient: .rainbow)
 
     override func sceneDidLoad() {

@@ -40,11 +40,11 @@ class SineArranger: BallArranger {
         let twoPi = Double.pi * 2
         let anglePerBall = twoPi / Double(balls.count)
         let w = rect.size.width
-        let r = min(rect.size.width, rect.size.height) * 0.25
+        let r = min(rect.size.width, rect.size.height) * 0.15
         let spaceForBalls = w * 0.9
         let spaceBetweenBalls = spaceForBalls / CGFloat(balls.count - 1)
         for (i, ball) in balls.enumerated() {
-            let theta = anglePerBall * Double(i) //+ Double.pi / 2
+            let theta = anglePerBall * Double(i) * 2
             let x = CGFloat(i) * spaceBetweenBalls - spaceForBalls / 2
             let y = r * sin(theta)
             ball.position = CGPoint(x: x, y: y)
