@@ -3,94 +3,14 @@
 import SpriteKit
 import GameplayKit
 
-struct PhysicsCategory {
-    static let none: UInt32 =   0
-    static let all: UInt32 =    UInt32.max
-    static let ball: UInt32 =   0b1
-    static let wall: UInt32 =   0b10
-}
-
-extension SKNode {
-    func fadeOutAndRemove(_ fadeOutDuration: TimeInterval = 0.1) {
-        let remove = SKAction.removeFromParent()
-        let fadeOut = SKAction.fadeOut(withDuration: fadeOutDuration)
-        run(SKAction.sequence([fadeOut, remove]))
-    }
-}
-
-func lerp(a : CGFloat, b : CGFloat, fraction : CGFloat) -> CGFloat
-{
-    return (b-a) * fraction + a
-}
-
-struct ColorComponents {
-    var red = CGFloat(0)
-    var green = CGFloat(0)
-    var blue = CGFloat(0)
-    var alpha = CGFloat(0)
-}
-
-extension NSColor {
-    func toComponents() -> ColorComponents {
-        var components = ColorComponents()
-        usingColorSpace(.sRGB)?.getRed(&components.red, green: &components.green, blue: &components.blue, alpha: &components.alpha)
-        return components
-    }
-}
-
-extension SKAction {
-    static func colorTransitionAction(fromColor: NSColor, toColor: NSColor, duration: Double = 0.1) -> SKAction
-    {
-        return SKAction.customAction(withDuration: duration, actionBlock: { (node : SKNode!, elapsedTime : CGFloat) -> Void in
-            let fraction = CGFloat(elapsedTime / CGFloat(duration))
-            let startColorComponents = fromColor.toComponents()
-            let endColorComponents = toColor.toComponents()
-            let transColor = NSColor(red: lerp(a: startColorComponents.red, b: endColorComponents.red, fraction: fraction),
-                                     green: lerp(a: startColorComponents.green, b: endColorComponents.green, fraction: fraction),
-                                     blue: lerp(a: startColorComponents.blue, b: endColorComponents.blue, fraction: fraction),
-                                     alpha: lerp(a: startColorComponents.alpha, b: endColorComponents.alpha, fraction: fraction))
-            (node as? SKShapeNode)?.fillColor = transColor
-        }
-        )
-    }
-}
-
-class Ball: SKShapeNode {
-    var noteNumber: Int = 42
-    var label: String = "" {
-        didSet {
-            labelNode.text = label
-            addChild(labelNode)
-            labelNode.position = .zero
-            labelNode.verticalAlignmentMode = .center
-            labelNode.horizontalAlignmentMode = .center
-        }
-    }
-
-    var backgroundColor: NSColor = .black {
-        didSet {
-            fillColor = backgroundColor
-        }
-    }
-
-    var labelColor: NSColor = .white {
-        didSet {
-            labelNode.color = labelColor
-        }
-    }
-
-    private var labelNode: SKLabelNode = .init()
-
-    func blink() {
-        let currentColor = backgroundColor
-        let targetColor = NSColor.white
-        let blinkIn = SKAction.colorTransitionAction(fromColor: currentColor, toColor: targetColor, duration: 0.01)
-        let blinkOut = SKAction.colorTransitionAction(fromColor: targetColor, toColor: currentColor, duration: 0.1)
-        run(SKAction.sequence([blinkIn, blinkOut]))
-    }
-}
-
 class GameScene: SKScene {
+    private struct PhysicsCategory {
+        static let none: UInt32 =   0
+        static let all: UInt32 =    UInt32.max
+        static let ball: UInt32 =   0b1
+        static let wall: UInt32 =   0b10
+    }
+
     private var border: SKShapeNode?
     private var balls: [Ball] = []
     private var defaultSpriteWidth: CGFloat { (size.width + size.height) * 0.03 }
@@ -98,8 +18,7 @@ class GameScene: SKScene {
     private var borderFrame: CGRect { CGRectInset(frame, borderOffset, borderOffset) }
 
     private var audio: AudioController { AudioController.shared }
-
-    override func didMove(to view: SKView) {
+    override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
 
@@ -110,6 +29,11 @@ class GameScene: SKScene {
         createBorder()
         createBalls()
         arrangeBalls()
+    }
+
+    override func didMove(to view: SKView) {
+        shouldEnableEffects = true
+        shader = Shaders.main
     }
 
     func start() {
@@ -144,6 +68,10 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        if let texture = view?.texture(from: self) {
+            // pass to shader
+            Shaders.main.setTexture(texture)
+        }
     }
 }
 
@@ -167,7 +95,7 @@ extension GameScene {
     }
 
     private func createBalls() {
-        let count = 17
+        let count = 29
         let r = defaultSpriteWidth / 2
         for i in 0..<count {
             let ball = Ball(circleOfRadius: r)
@@ -198,12 +126,12 @@ extension GameScene {
     private func arrangeBalls() {
         let w = size.width
         let r = defaultSpriteWidth / 2
-        let spaceForBalls = w * 0.8
+        let spaceForBalls = w * 0.9
         let spaceBetweenBalls = spaceForBalls / CGFloat(balls.count - 1)
 
         for (i, ball) in balls.enumerated() {
             let xOffset = CGFloat(i) * spaceBetweenBalls - spaceForBalls / 2
-            let yOffset = CGFloat(i) * r / 2
+            let yOffset: CGFloat = CGFloat(i) * r / 3
             ball.position = CGPointMake(xOffset, yOffset)
         }
     }

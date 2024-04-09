@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32153512BC541F300E23961 /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153502BC541F300E23961 /* Shaders.swift */; };
+		A32153532BC5430400E23961 /* main_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A32153522BC5430400E23961 /* main_shader.fsh */; };
+		A32153552BC5673400E23961 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153542BC5673400E23961 /* Ball.swift */; };
+		A32153572BC5675A00E23961 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153562BC5675A00E23961 /* Helpers.swift */; };
+		A32153592BC567A600E23961 /* BallArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153582BC567A600E23961 /* BallArranger.swift */; };
 		A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358D0152BB1A3AD00821E5D /* MainWindowController.swift */; };
 		A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3B42BB07837003C09AF /* AppDelegate.swift */; };
 		A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3B62BB07837003C09AF /* GameScene.sks */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A32153502BC541F300E23961 /* Shaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
+		A32153522BC5430400E23961 /* main_shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = main_shader.fsh; sourceTree = "<group>"; };
+		A32153542BC5673400E23961 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		A32153562BC5675A00E23961 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A32153582BC567A600E23961 /* BallArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallArranger.swift; sourceTree = "<group>"; };
 		A358D0152BB1A3AD00821E5D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		A3C5D3B12BB07837003C09AF /* DaBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5D3B42BB07837003C09AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +130,11 @@
 				A3C5D3B62BB07837003C09AF /* GameScene.sks */,
 				A3C5D3B82BB07837003C09AF /* Actions.sks */,
 				A3C5D3BA2BB07837003C09AF /* GameScene.swift */,
+				A32153562BC5675A00E23961 /* Helpers.swift */,
+				A32153542BC5673400E23961 /* Ball.swift */,
+				A32153582BC567A600E23961 /* BallArranger.swift */,
+				A32153502BC541F300E23961 /* Shaders.swift */,
+				A32153522BC5430400E23961 /* main_shader.fsh */,
 				A3C5D3BC2BB07837003C09AF /* ViewController.swift */,
 				A3C5D3E92BB07891003C09AF /* AudioController.swift */,
 				A358D0152BB1A3AD00821E5D /* MainWindowController.swift */,
@@ -266,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32153532BC5430400E23961 /* main_shader.fsh in Resources */,
 				A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */,
 				A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */,
 				A3C5D3BF2BB07838003C09AF /* Assets.xcassets in Resources */,
@@ -296,10 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32153512BC541F300E23961 /* Shaders.swift in Sources */,
+				A32153592BC567A600E23961 /* BallArranger.swift in Sources */,
 				A3C5D3BD2BB07837003C09AF /* ViewController.swift in Sources */,
 				A3C5D3BB2BB07837003C09AF /* GameScene.swift in Sources */,
+				A32153572BC5675A00E23961 /* Helpers.swift in Sources */,
 				A3C5D3EA2BB07891003C09AF /* AudioController.swift in Sources */,
 				A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */,
+				A32153552BC5673400E23961 /* Ball.swift in Sources */,
 				A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

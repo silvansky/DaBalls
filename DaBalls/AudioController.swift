@@ -5,7 +5,7 @@ import AudioKit
 import Tonic
 
 extension Key {
-    func note(with number: Int, startingOctave: Int = 3) -> Note {
+    func note(with number: Int, startingOctave: Int = 2) -> Note {
         let notes = noteSet.array
         var index = number % notes.count
         var octaveShift = number / notes.count
