@@ -18,6 +18,11 @@ class GameScene: SKScene {
     private var borderFrame: CGRect { CGRectInset(frame, borderOffset, borderOffset) }
 
     private var audio: AudioController { AudioController.shared }
+
+    private let arranger: BallArranger = CircularArranger()
+    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(0, 10))
+    private let coloring: BallColoring = GradientBallColoring()
+
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
@@ -28,6 +33,7 @@ class GameScene: SKScene {
 
         createBorder()
         createBalls()
+        colorBalls()
         arrangeBalls()
     }
 
@@ -38,7 +44,7 @@ class GameScene: SKScene {
 
     func start() {
         physicsWorld.gravity = CGVectorMake(0, -0.4)
-        //kickBalls()
+        kickBalls()
     }
 
     func touchDown(atPoint pos : CGPoint) {
@@ -99,11 +105,7 @@ extension GameScene {
         let r = defaultSpriteWidth / 2
         for i in 0..<count {
             let ball = Ball(circleOfRadius: r)
-            let c = 1.0 / Double(count) * Double(i)
-            ball.backgroundColor = NSColor(red: c, green: 0, blue: 0, alpha: 1)
-            ball.strokeColor = NSColor(red: 1 - c, green: 1 - c / 2, blue: 1 - c / 2, alpha: 1)
             ball.label = audio.nameForNote(i)
-            //ball.glowWidth = 1
 
             ball.physicsBody = SKPhysicsBody(circleOfRadius: r)
             ball.physicsBody?.friction = 0
@@ -123,26 +125,22 @@ extension GameScene {
         }
     }
 
-    private func arrangeBalls() {
-        let w = size.width
-        let r = defaultSpriteWidth / 2
-        let spaceForBalls = w * 0.9
-        let spaceBetweenBalls = spaceForBalls / CGFloat(balls.count - 1)
+    private func colorBalls() {
+        coloring.colorBalls(balls)
+    }
 
-        for (i, ball) in balls.enumerated() {
-            let xOffset = CGFloat(i) * spaceBetweenBalls - spaceForBalls / 2
-            let yOffset: CGFloat = CGFloat(i) * r / 3
-            ball.position = CGPointMake(xOffset, yOffset)
-        }
+    private func arrangeBalls() {
+        arranger.arrangeBalls(balls, rect: frame, ballRadius: defaultSpriteWidth / 2)
     }
 
     private func kickBalls() {
-        for (i, ball) in balls.enumerated() {
-            let dx = -(50 + i * 5)
-            let dy = 50
-            //ball.physicsBody?.velocity = CGVector(dx: dx, dy: 0)
-            ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
-        }
+        kicker.kickBalls(balls)
+//        for (i, ball) in balls.enumerated() {
+//            let dx = -(50 + i * 5)
+//            let dy = 50
+//            //ball.physicsBody?.velocity = CGVector(dx: dx, dy: 0)
+//            ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
+//        }
     }
 }
 
