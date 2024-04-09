@@ -20,8 +20,8 @@ class GameScene: SKScene {
     private var audio: AudioController { AudioController.shared }
 
     private let arranger: BallArranger = CircularArranger()
-    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(0, 10))
-    private let coloring: BallColoring = GradientBallColoring()
+    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(50, 10))
+    private let coloring: BallColoring = GradientBallColoring(gradient: .rainbow)
 
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self

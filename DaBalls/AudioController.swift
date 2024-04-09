@@ -26,7 +26,7 @@ class AudioController
     private var reverb: Reverb
     private let engine: AudioEngine = .init()
     private let mixer: Mixer = .init()
-    private let key: Key = Key(root: NoteClass(.C), scale: .pentatonicMajor)
+    private let key: Key = Key(root: NoteClass(.D), scale: .pentatonicMinor)
 
     private init() {
         reverb = Reverb(instrument, dryWetMix: 0.3)

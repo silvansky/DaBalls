@@ -20,7 +20,7 @@ class RedBallColoring: BallColoring {
 class GradientBallColoring: BallColoring {
     private let gradient: NSGradient
 
-    init(gradient: NSGradient = NSGradient(colors: [.red, .green, .blue, .green, .red])!) {
+    init(gradient: NSGradient = NSGradient(colors: [.red, .purple, .blue, .green, .red])!) {
         self.gradient = gradient
     }
 

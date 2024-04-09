@@ -47,3 +47,25 @@ extension SKAction {
         )
     }
 }
+
+extension NSGradient {
+    class var rainbow: NSGradient {
+        return NSGradient(colors: [
+            .RGB(150, 0, 0),
+            .RGB(0, 0, 150),
+            .RGB(10, 120, 10),
+            .RGB(0, 0, 150),
+            .RGB(150, 0, 0)
+        ])!
+    }
+}
+
+extension NSColor {
+    static func RGB(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> NSColor {
+        return NSColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: 1)
+    }
+
+    static func RGBA(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) -> NSColor {
+        return NSColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
+    }
+}
