@@ -19,13 +19,17 @@ class GameScene: SKScene {
 
     private var audio: AudioController { AudioController.shared }
 
-    private let arranger: BallArranger = CircularArranger()
-    private let kicker: BallKicker = RadialBallKicker()//LinearBallKicker(vector: CGVectorMake(50, 50))
-    private let coloring: BallColoring = GradientBallColoring(gradient: .rainbow)
+    private let arranger: BallArranger = LineArranger()
+    private let kicker: BallKicker = LinearBallKicker(vector: CGVectorMake(30, 0))
+    private let coloring: BallColoring = GradientBallColoring(gradient: .linearRainbow)
+
+    private let ballCount = 7
+    private let restitution: CGFloat = 0.999
 
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = .zero
+        physicsWorld.speed = 4
 
         physicsBody?.friction = 0
         physicsBody?.linearDamping = 0
@@ -39,11 +43,12 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         shouldEnableEffects = true
-        shader = Shaders.main
+        shader = Shaders.motionBlur
     }
 
     func start() {
-        //physicsWorld.gravity = CGVectorMake(0, -0.4)
+        reset()
+        physicsWorld.gravity = CGVectorMake(0, -0.4)
         kickBalls()
     }
 
@@ -79,12 +84,12 @@ class GameScene: SKScene {
     override func keyDown(with event: NSEvent) {
     }
     
-    
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+    }
+
+    override func didFinishUpdate() {
         if let texture = view?.texture(from: self) {
-            // pass to shader
-            Shaders.main.setTexture(texture)
+            Shaders.motionBlur.setTexture(texture)
         }
     }
 }
@@ -96,7 +101,7 @@ extension GameScene {
         shape.physicsBody = SKPhysicsBody(edgeLoopFrom: borderFrame)
         shape.physicsBody?.friction = 0
         shape.physicsBody?.isDynamic = true
-        shape.physicsBody?.restitution = 1
+        shape.physicsBody?.restitution = restitution
         shape.physicsBody?.categoryBitMask = PhysicsCategory.wall
         shape.physicsBody?.contactTestBitMask = PhysicsCategory.ball
         shape.physicsBody?.collisionBitMask = PhysicsCategory.ball
@@ -109,12 +114,12 @@ extension GameScene {
     }
 
     private func createBalls() {
-        let count = 29
         let r = defaultSpriteWidth / 2
-        for i in 0..<count {
+        for i in 0..<ballCount {
             let ball = Ball(circleOfRadius: r)
-            ball.label = audio.nameForNote(i)
+            //ball.label = audio.nameForNote(i)
 
+            ball.isAntialiased = true
             ball.physicsBody = SKPhysicsBody(circleOfRadius: r)
             ball.physicsBody?.friction = 0
             ball.physicsBody?.allowsRotation = false
@@ -124,10 +129,11 @@ extension GameScene {
             ball.physicsBody?.contactTestBitMask = PhysicsCategory.wall
             ball.physicsBody?.collisionBitMask = PhysicsCategory.wall
             ball.physicsBody?.usesPreciseCollisionDetection = true
-            ball.physicsBody?.restitution = 1
+            ball.physicsBody?.restitution = restitution
             ball.physicsBody?.linearDamping = 0
             ball.physicsBody?.angularDamping = 0
             ball.noteNumber = i
+            ball.lineWidth = 0.001
             balls.append(ball)
             addChild(ball)
         }
@@ -143,12 +149,6 @@ extension GameScene {
 
     private func kickBalls() {
         kicker.kickBalls(balls)
-//        for (i, ball) in balls.enumerated() {
-//            let dx = -(50 + i * 5)
-//            let dy = 50
-//            //ball.physicsBody?.velocity = CGVector(dx: dx, dy: 0)
-//            ball.physicsBody?.applyImpulse(CGVector(dx: dx, dy: dy))
-//        }
     }
 }
 

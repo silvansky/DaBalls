@@ -49,13 +49,21 @@ extension SKAction {
 }
 
 extension NSGradient {
-    class var rainbow: NSGradient {
+    class var circularRainbow: NSGradient {
         return NSGradient(colors: [
-            .RGB(150, 0, 0),
-            .RGB(0, 0, 150),
-            .RGB(10, 120, 10),
-            .RGB(0, 0, 150),
-            .RGB(150, 0, 0)
+            .RGB(250, 0, 0),
+            .RGB(0, 0, 250),
+            .RGB(10, 220, 10),
+            .RGB(0, 0, 250),
+            .RGB(250, 0, 0)
+        ])!
+    }
+
+    class var linearRainbow: NSGradient {
+        return NSGradient(colors: [
+            .RGB(250, 0, 0),
+            .RGB(0, 250, 0),
+            .RGB(0, 0, 250),
         ])!
     }
 }

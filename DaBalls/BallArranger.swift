@@ -10,12 +10,12 @@ class LineArranger: BallArranger {
     func arrangeBalls(_ balls: [Ball], rect: CGRect, ballRadius: CGFloat) {
         let w = rect.size.width
         let r = ballRadius
-        let spaceForBalls = w * 0.9
+        let spaceForBalls = w * 0.8
         let spaceBetweenBalls = spaceForBalls / CGFloat(balls.count - 1)
 
         for (i, ball) in balls.enumerated() {
             let xOffset = CGFloat(i) * spaceBetweenBalls - spaceForBalls / 2
-            let yOffset: CGFloat = CGFloat(i) * r / 3
+            let yOffset: CGFloat = CGFloat(i + 10) * r / 1.5
             ball.position = CGPointMake(xOffset, yOffset)
         }
     }
@@ -30,6 +30,22 @@ class CircularArranger: BallArranger {
             let theta = anglePerBall * Double(i) + Double.pi / 2
             let x = r * cos(theta)
             let y = r * sin(theta)
+            ball.position = CGPoint(x: x, y: y)
+        }
+    }
+}
+
+class SpiralArranger: BallArranger {
+    func arrangeBalls(_ balls: [Ball], rect: CGRect, ballRadius: CGFloat) {
+        let twoPi = Double.pi * 3
+        let anglePerBall = twoPi / Double(balls.count)
+        let r0 = min(rect.size.width, rect.size.height) * 0.1
+        let k: CGFloat = 0.07
+        for (i, ball) in balls.enumerated() {
+            let br = r0 + k * CGFloat(i) * r0
+            let theta = anglePerBall * Double(i) + Double.pi / 2
+            let x = br * cos(theta)
+            let y = br * sin(theta)
             ball.position = CGPoint(x: x, y: y)
         }
     }

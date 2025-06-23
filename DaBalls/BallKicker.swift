@@ -7,6 +7,10 @@ protocol BallKicker {
     func kickBalls(_ balls: [Ball])
 }
 
+class NoopBallKicker: BallKicker {
+    func kickBalls(_ balls: [Ball]) {}
+}
+
 class LinearBallKicker: BallKicker {
     let vector: CGVector
 
@@ -32,7 +36,7 @@ class ProgressiveLinearBallKicker: BallKicker {
 
     func kickBalls(_ balls: [Ball]) {
         for (i, ball) in balls.enumerated() {
-            let k = CGFloat(i) * factor
+            let k = 1 + CGFloat(i) * factor
             ball.physicsBody?.applyImpulse(CGVectorMake(vector.dx * k, vector.dy * k))
         }
     }
@@ -41,7 +45,7 @@ class ProgressiveLinearBallKicker: BallKicker {
 class RadialBallKicker: BallKicker {
     let force: CGFloat
 
-    init(force: CGFloat = 50) {
+    init(force: CGFloat = -100) {
         self.force = force
     }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A32153512BC541F300E23961 /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153502BC541F300E23961 /* Shaders.swift */; };
-		A32153532BC5430400E23961 /* main_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A32153522BC5430400E23961 /* main_shader.fsh */; };
+		A32153532BC5430400E23961 /* echo_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A32153522BC5430400E23961 /* echo_shader.fsh */; };
 		A32153552BC5673400E23961 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153542BC5673400E23961 /* Ball.swift */; };
 		A32153572BC5675A00E23961 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153562BC5675A00E23961 /* Helpers.swift */; };
 		A32153592BC567A600E23961 /* BallArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153582BC567A600E23961 /* BallArranger.swift */; };
@@ -30,6 +30,8 @@
 		A3C5D3ED2BB078BF003C09AF /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3C5D3EC2BB078BF003C09AF /* AudioKit */; };
 		A3C5D3F12BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */; };
 		A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */; };
+		A3E263C32E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3E263C22E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 */; };
+		A3E263C52E096CD700B1B1F1 /* motion_blur_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		A32153502BC541F300E23961 /* Shaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
-		A32153522BC5430400E23961 /* main_shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = main_shader.fsh; sourceTree = "<group>"; };
+		A32153522BC5430400E23961 /* echo_shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = echo_shader.fsh; sourceTree = "<group>"; };
 		A32153542BC5673400E23961 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		A32153562BC5675A00E23961 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A32153582BC567A600E23961 /* BallArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallArranger.swift; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 		A3C5D3E92BB07891003C09AF /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Motostoke and Glockenspiel Carillons-v3.sf2"; sourceTree = "<group>"; };
 		A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rhodes EPs Plus-v2.4.sf2"; sourceTree = "<group>"; };
+		A3E263C22E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HS Acoustic Percussion.sf2"; sourceTree = "<group>"; };
+		A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = motion_blur_shader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				A3C5D3B42BB07837003C09AF /* AppDelegate.swift */,
 				A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */,
 				A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */,
+				A3E263C22E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 */,
 				A3C5D3B62BB07837003C09AF /* GameScene.sks */,
 				A3C5D3B82BB07837003C09AF /* Actions.sks */,
 				A3C5D3BA2BB07837003C09AF /* GameScene.swift */,
@@ -140,7 +145,8 @@
 				A321535A2BC57A6E00E23961 /* BallKicker.swift */,
 				A321535C2BC57D7600E23961 /* BallColoring.swift */,
 				A32153502BC541F300E23961 /* Shaders.swift */,
-				A32153522BC5430400E23961 /* main_shader.fsh */,
+				A32153522BC5430400E23961 /* echo_shader.fsh */,
+				A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */,
 				A3C5D3BC2BB07837003C09AF /* ViewController.swift */,
 				A3C5D3E92BB07891003C09AF /* AudioController.swift */,
 				A358D0152BB1A3AD00821E5D /* MainWindowController.swift */,
@@ -287,10 +293,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A32153532BC5430400E23961 /* main_shader.fsh in Resources */,
+				A32153532BC5430400E23961 /* echo_shader.fsh in Resources */,
 				A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */,
 				A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */,
 				A3C5D3BF2BB07838003C09AF /* Assets.xcassets in Resources */,
+				A3E263C32E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 in Resources */,
+				A3E263C52E096CD700B1B1F1 /* motion_blur_shader.fsh in Resources */,
 				A3C5D3F12BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 in Resources */,
 				A3C5D3B92BB07837003C09AF /* Actions.sks in Resources */,
 				A3C5D3C22BB07838003C09AF /* Main.storyboard in Resources */,
