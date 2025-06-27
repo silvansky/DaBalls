@@ -22,9 +22,11 @@ https://youtu.be/w1peUc-WgCg
 
 ## TODO
 
-- [ ] Note velocity calculation based on speed
-- [ ] Stereo sound
-- [ ] Dynamic gravity
+- [x] Note velocity calculation based on speed
+- [x] Stereo sound
+- [x] Dynamic gravity
+- [x] Oscillator for each ball
+- [x] Additional gravity fields
 - [ ] UI for selecting options (initial arrangement, colors, gravity, kick, etc)
 - [ ] UI for selecting soundfont
 - [ ] MIDI export
