@@ -7,15 +7,20 @@ protocol BallArranger {
 }
 
 class LineArranger: BallArranger {
+    private let heightCoefficient: CGFloat
+    init(heightCoefficient: CGFloat = 1) {
+        self.heightCoefficient = heightCoefficient
+    }
+
     func arrangeBalls(_ balls: [Ball], rect: CGRect, ballRadius: CGFloat) {
         let w = rect.size.width
-        let r = ballRadius
         let spaceForBalls = w * 0.8
         let spaceBetweenBalls = spaceForBalls / CGFloat(balls.count - 1)
+        let verticalSpacing = heightCoefficient * (rect.size.height / 2.5) / CGFloat(balls.count - 1)
 
         for (i, ball) in balls.enumerated() {
             let xOffset = CGFloat(i) * spaceBetweenBalls - spaceForBalls / 2
-            let yOffset: CGFloat = CGFloat(i + 10) * r / 1.5
+            let yOffset: CGFloat = CGFloat(i) * verticalSpacing
             ball.position = CGPointMake(xOffset, yOffset)
         }
     }

@@ -1,7 +1,4 @@
-//
-
 import SpriteKit
-import GameplayKit
 
 protocol BallColoring {
     func colorBalls(_ balls: [Ball])

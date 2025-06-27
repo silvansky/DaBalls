@@ -4,7 +4,7 @@ void main()
     
     vec4 previous_color = texture2D(prevframe, v_tex_coord);
     
-    float persistence = 0.5;
+    float persistence = 0.95;
 
     if (current_color.a > 0.0) {
         gl_FragColor = mix(current_color, previous_color, persistence);

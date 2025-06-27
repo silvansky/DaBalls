@@ -22,6 +22,9 @@ https://youtu.be/w1peUc-WgCg
 
 ## TODO
 
+- [ ] Note velocity calculation based on speed
+- [ ] Stereo sound
+- [ ] Dynamic gravity
 - [ ] UI for selecting options (initial arrangement, colors, gravity, kick, etc)
 - [ ] UI for selecting soundfont
 - [ ] MIDI export

@@ -3,6 +3,7 @@
 import SpriteKit
 
 class Ball: SKShapeNode {
+    var identifier: Int = 0
     var noteNumber: Int = 42
     var label: String = "" {
         didSet {

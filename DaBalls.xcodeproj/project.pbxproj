@@ -14,6 +14,9 @@
 		A32153592BC567A600E23961 /* BallArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32153582BC567A600E23961 /* BallArranger.swift */; };
 		A321535B2BC57A6E00E23961 /* BallKicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321535A2BC57A6E00E23961 /* BallKicker.swift */; };
 		A321535D2BC57D7600E23961 /* BallColoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321535C2BC57D7600E23961 /* BallColoring.swift */; };
+		A32F448F2E0AFBA600DE9D4F /* TimeBasedForcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F448E2E0AFBA600DE9D4F /* TimeBasedForcer.swift */; };
+		A355B3D22E0A89F700E42B4E /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A355B3D12E0A89F700E42B4E /* SoundpipeAudioKit */; };
+		A355B3D52E0A991000E42B4E /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = A355B3D42E0A991000E42B4E /* AudioKitEX */; };
 		A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358D0152BB1A3AD00821E5D /* MainWindowController.swift */; };
 		A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D3B42BB07837003C09AF /* AppDelegate.swift */; };
 		A3C5D3B72BB07837003C09AF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3B62BB07837003C09AF /* GameScene.sks */; };
@@ -30,8 +33,10 @@
 		A3C5D3ED2BB078BF003C09AF /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3C5D3EC2BB078BF003C09AF /* AudioKit */; };
 		A3C5D3F12BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */; };
 		A3C5D3F32BB184E0003C09AF /* Rhodes EPs Plus-v2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */; };
+		A3DEAE1A2E0ABE2B005395D8 /* TimeBasedKicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DEAE192E0ABE2B005395D8 /* TimeBasedKicker.swift */; };
 		A3E263C32E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A3E263C22E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 */; };
 		A3E263C52E096CD700B1B1F1 /* motion_blur_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */; };
+		A3E263EB2E09BFDD00B1B1F1 /* GravityAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E263EA2E09BFDD00B1B1F1 /* GravityAdjustment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,7 @@
 		A32153582BC567A600E23961 /* BallArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallArranger.swift; sourceTree = "<group>"; };
 		A321535A2BC57A6E00E23961 /* BallKicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallKicker.swift; sourceTree = "<group>"; };
 		A321535C2BC57D7600E23961 /* BallColoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallColoring.swift; sourceTree = "<group>"; };
+		A32F448E2E0AFBA600DE9D4F /* TimeBasedForcer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedForcer.swift; sourceTree = "<group>"; };
 		A358D0152BB1A3AD00821E5D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		A3C5D3B12BB07837003C09AF /* DaBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5D3B42BB07837003C09AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +83,10 @@
 		A3C5D3E92BB07891003C09AF /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		A3C5D3F02BB081C2003C09AF /* Motostoke and Glockenspiel Carillons-v3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Motostoke and Glockenspiel Carillons-v3.sf2"; sourceTree = "<group>"; };
 		A3C5D3F22BB184DF003C09AF /* Rhodes EPs Plus-v2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rhodes EPs Plus-v2.4.sf2"; sourceTree = "<group>"; };
+		A3DEAE192E0ABE2B005395D8 /* TimeBasedKicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedKicker.swift; sourceTree = "<group>"; };
 		A3E263C22E0966D500B1B1F1 /* HS Acoustic Percussion.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HS Acoustic Percussion.sf2"; sourceTree = "<group>"; };
 		A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = motion_blur_shader.fsh; sourceTree = "<group>"; };
+		A3E263EA2E09BFDD00B1B1F1 /* GravityAdjustment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityAdjustment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +95,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C5D3ED2BB078BF003C09AF /* AudioKit in Frameworks */,
+				A355B3D52E0A991000E42B4E /* AudioKitEX in Frameworks */,
 				A3C5D3E82BB07870003C09AF /* Tonic in Frameworks */,
+				A355B3D22E0A89F700E42B4E /* SoundpipeAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +155,9 @@
 				A321535A2BC57A6E00E23961 /* BallKicker.swift */,
 				A321535C2BC57D7600E23961 /* BallColoring.swift */,
 				A32153502BC541F300E23961 /* Shaders.swift */,
+				A32F448E2E0AFBA600DE9D4F /* TimeBasedForcer.swift */,
+				A3DEAE192E0ABE2B005395D8 /* TimeBasedKicker.swift */,
+				A3E263EA2E09BFDD00B1B1F1 /* GravityAdjustment.swift */,
 				A32153522BC5430400E23961 /* echo_shader.fsh */,
 				A3E263C42E096CD700B1B1F1 /* motion_blur_shader.fsh */,
 				A3C5D3BC2BB07837003C09AF /* ViewController.swift */,
@@ -200,6 +213,8 @@
 			packageProductDependencies = (
 				A3C5D3E72BB07870003C09AF /* Tonic */,
 				A3C5D3EC2BB078BF003C09AF /* AudioKit */,
+				A355B3D12E0A89F700E42B4E /* SoundpipeAudioKit */,
+				A355B3D42E0A991000E42B4E /* AudioKitEX */,
 			);
 			productName = DaBalls;
 			productReference = A3C5D3B12BB07837003C09AF /* DaBalls.app */;
@@ -276,6 +291,8 @@
 			packageReferences = (
 				A3C5D3E52BB07861003C09AF /* XCRemoteSwiftPackageReference "AudioKit" */,
 				A3C5D3E62BB07870003C09AF /* XCRemoteSwiftPackageReference "Tonic" */,
+				A355B3D02E0A895B00E42B4E /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				A355B3D32E0A991000E42B4E /* XCRemoteSwiftPackageReference "AudioKitEX" */,
 			);
 			productRefGroup = A3C5D3B22BB07837003C09AF /* Products */;
 			projectDirPath = "";
@@ -330,13 +347,16 @@
 				A321535B2BC57A6E00E23961 /* BallKicker.swift in Sources */,
 				A32153592BC567A600E23961 /* BallArranger.swift in Sources */,
 				A3C5D3BD2BB07837003C09AF /* ViewController.swift in Sources */,
+				A3DEAE1A2E0ABE2B005395D8 /* TimeBasedKicker.swift in Sources */,
 				A3C5D3BB2BB07837003C09AF /* GameScene.swift in Sources */,
 				A32153572BC5675A00E23961 /* Helpers.swift in Sources */,
+				A32F448F2E0AFBA600DE9D4F /* TimeBasedForcer.swift in Sources */,
 				A3C5D3EA2BB07891003C09AF /* AudioController.swift in Sources */,
 				A321535D2BC57D7600E23961 /* BallColoring.swift in Sources */,
 				A3C5D3B52BB07837003C09AF /* AppDelegate.swift in Sources */,
 				A32153552BC5673400E23961 /* Ball.swift in Sources */,
 				A358D0162BB1A3AD00821E5D /* MainWindowController.swift in Sources */,
+				A3E263EB2E09BFDD00B1B1F1 /* GravityAdjustment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +690,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A355B3D02E0A895B00E42B4E /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.3;
+			};
+		};
+		A355B3D32E0A991000E42B4E /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.2;
+			};
+		};
 		A3C5D3E52BB07861003C09AF /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
@@ -683,12 +719,22 @@
 			repositoryURL = "https://github.com/AudioKit/Tonic.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.2;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A355B3D12E0A89F700E42B4E /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A355B3D02E0A895B00E42B4E /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+		A355B3D42E0A991000E42B4E /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A355B3D32E0A991000E42B4E /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
 		A3C5D3E72BB07870003C09AF /* Tonic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3C5D3E62BB07870003C09AF /* XCRemoteSwiftPackageReference "Tonic" */;

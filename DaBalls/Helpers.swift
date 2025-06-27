@@ -77,3 +77,20 @@ extension NSColor {
         return NSColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
     }
 }
+
+extension CGVector {
+    var length: CGFloat {
+        get {
+            return sqrt(dx * dx + dy * dy)
+        }
+    }
+
+    func normalized() -> CGVector {
+        guard length > 0 else { return CGVector(dx: 0, dy: 0) }
+        return CGVector(dx: dx / length, dy: dy / length)
+    }
+
+    func scaled(by scale: CGFloat) -> CGVector {
+        return CGVector(dx: dx * scale, dy: dy * scale)
+    }
+}

@@ -1,7 +1,4 @@
-//
-
 import SpriteKit
-import GameplayKit
 
 protocol BallKicker {
     func kickBalls(_ balls: [Ball])
@@ -58,5 +55,54 @@ class RadialBallKicker: BallKicker {
             let y = force * sin(theta)
             ball.physicsBody?.applyImpulse(CGVectorMake(x, y))
         }
+    }
+}
+
+class CircularBallKicker: BallKicker {
+    let force: CGFloat
+
+    init(force: CGFloat = -100) {
+        self.force = force
+    }
+
+    func kickBalls(_ balls: [Ball]) {
+        for ball in balls {
+            // calc angle between ball and 0-0
+            let angle = atan2(ball.position.y, ball.position.x)
+            // add pi/2
+            let theta = angle + CGFloat.pi / 2
+
+            // calc vector
+            let x = force * cos(theta)
+            let y = force * sin(theta)
+            ball.physicsBody?.applyImpulse(CGVectorMake(x, y))
+        }
+    }
+}
+
+class AngularSpeedBallKicker: BallKicker {
+    let angularSpeed: CGFloat
+    let center: CGPoint
+
+    init(angularSpeed: CGFloat = -10, center: CGPoint = .zero) {
+        self.angularSpeed = angularSpeed
+        self.center = center
+    }
+
+    func kickBalls(_ balls: [Ball]) {
+        for ball in balls {
+            let velocity = linearVelocity(angularSpeed: angularSpeed, center: center, point: ball.position)
+            ball.physicsBody?.applyImpulse(velocity)
+        }
+    }
+
+    private func linearVelocity(angularSpeed: Double, center: CGPoint, point: CGPoint) -> CGVector {
+        let rx = point.x - center.x
+        let ry = point.y - center.y
+
+        let vx = -angularSpeed * ry
+        let vy = angularSpeed * rx
+
+        return CGVector(dx: vx, dy: vy)
     }
 }
